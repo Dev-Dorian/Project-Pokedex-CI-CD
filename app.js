@@ -10,6 +10,7 @@ app.get('/health', (req, res) => {
 
 app.get('/version', (req, res) => {
   res.send(version)
+  console.log(`server started on port ${PORT}`);
 })
 
 app.use(express.static("dist"));
