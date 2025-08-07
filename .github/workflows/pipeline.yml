@@ -86,11 +86,14 @@ jobs:
         with:
           name: dist
           path: dist
+      - name: Start server
+        run: npm run start-test & sleep 10
       - name: E2E tests
         uses: cypress-io/github-action@v6
         with: 
-          start: npm run start-test
-          wait-on: ' http://localhost:5000'
+          start: npm run test:e2e
+          wait-on: 'http://localhost:5000'
+
   deploy:
     needs: [test, e2e]        
     runs-on: ubuntu-latest
