@@ -3,7 +3,6 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:5000',
-    defaultCommandTimeout: 10000,
     setupNodeEvents(on, config) {
       on('before:run', async (details) => {
         // Wait for the server to be available before running tests
