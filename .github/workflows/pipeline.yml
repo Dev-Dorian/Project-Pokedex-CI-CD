@@ -91,7 +91,7 @@ jobs:
         with: 
           command: npm run test:e2e
           start: npm run start-test
-          wait-on: 'http://[::1]:5000'
+          wait-on: 'npx wait-on --timeout 60000 http://localhost:5000'
 
   deploy:
     needs: [test, e2e]        
